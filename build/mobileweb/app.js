@@ -30,19 +30,18 @@ var button = Ti.UI.createButton({
 	 top:450
 });
 
-// button.addEventListener('click', function() {
-// 
-	// //prepare to move the window
-// });
-//  
+button.addEventListener('click', function() {
+	
+ var w = Titanium.UI.createWindow({
+ 		backgroundColor : "#123",
+        title:'New Window',
+        barColor:'black',
+        url:'shake.js'
+    });
 
-
-/*var count = 0;
-
-Ti.Gesture.addEventListener("shake", function(e){
-	count += 1;
-	label.text = count;
-});*/
+    w.open();
+});
+  
 
 win.add(logo);
 win.add(label);
