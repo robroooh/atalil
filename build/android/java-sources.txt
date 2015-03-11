@@ -1,0 +1,8 @@
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/android/support/v7/appcompat/R.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/ti/modules/titanium/ui/R.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/ApplicationStylesheet.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/AssetCryptImpl.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/LalituraActivity.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/LalituraAppInfo.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/LalituraApplication.java"
+"C:/Users/Deeprom/Documents/Titanium_Studio_Workspace/lalitura/build/android/gen/tuira/a/R.java"
