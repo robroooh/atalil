@@ -42,7 +42,7 @@ button.addEventListener('click', function() {
     w.open();
 });
   
-
+//TAE WAS HERE
 win.add(logo);
 win.add(label);
 win.add(button);
