@@ -24,7 +24,7 @@ var label = Ti.UI.createLabel({
 
 var button = Ti.UI.createButton({
 	title : "Help The World!",
-	height : 40,
+	height : 'auto',
 	width : 200,
 	top : 450
 });
@@ -33,7 +33,7 @@ button.addEventListener('click', function() {
 
 	var mapw = Titanium.UI.createWindow({
 		backgroundColor : "#123",
-		title : 'New Window',
+		title : 'Your Location',
 		barColor : 'black',
 		url : 'map_view.js'
 	});

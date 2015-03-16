@@ -1,55 +1,82 @@
 var win = Ti.UI.currentWindow;
 
-alert("latitude: " + win.latitude + "longitude: " + win.longitude);
-
 var b = Titanium.UI.createButton({
-	title:'Close',
-	top:400,
-	width:"auto",
-	height:"auto"
-});
-    
-b.addEventListener('click',function(){
-	Ti.UI.currentWindow.close();
+	title : 'Take a Photo',
+	bottom : 20,
+	width : "300",
+	height : "auto"
 });
 
+var photo;
 
+b.addEventListener('click', function() {
+	var photow = Titanium.UI.createWindow({
+		backgroundColor : "#123",
+		title : 'take a photo',
+		barColor : 'black',
+		url : 'photo.js',
+		photo : ''
+	});
+
+	photow.open();
+	var img_view = Titanium.UI.createImageView({
+		backgroundColor : 'pink',
+		height : '100%',
+		width : '100%',
+		image : photo
+	});
+
+	win.add(img_view);
+
+});
+
+var image = Ti.UI.createImageView({
+	image : 'fap.jpg',
+	bottom : "100",
+	width : 'auto',
+	height : 'auto'
+});
 
 var label = Ti.UI.createLabel({
-	text : win.longitude,
-	width: "auto",
+	text : "ชักว่าวสิ",
+	width : "auto",
 	height : "auto",
-	color: "#FFF",
-	top:150,
-	font:{
-		fontFamily:'Arial',
-		fontWeight:'bold',
-		fontSize:40
+	color : "#FFF",
+	top : 150,
+	font : {
+		fontFamily : 'Arial',
+		fontWeight : 'bold',
+		fontSize : 24
 	}
 });
 
-var countLabel  = Ti.UI.createLabel({
+var countLabel = Ti.UI.createLabel({
 	text : "0",
-	width: "auto",
+	width : "auto",
 	height : "auto",
-	color: "#FFF",
-	top:300,
-	font:{
-		fontFamily:'Arial',
-		fontWeight:'bold',
-		fontSize:30
+	color : "#FFF",
+	top : 10,
+	font : {
+		fontFamily : 'Arial',
+		fontWeight : 'bold',
+		fontSize : 30
 	}
 });
 
 var count = 0;
 
-Ti.Gesture.addEventListener("shake", function(e){
+Ti.Gesture.addEventListener("shake", function(e) {
 	Titanium.Media.vibrate();
 	count += 1;
 	countLabel.text = count;
+
+	if (count >= 1) {
+		alert("3 NOW");
+		label.setText("Congratulation!\nYou just save the world!");
+		win.add(b);
+	}
 });
 
 win.add(label);
+win.add(image);
 win.add(countLabel);
-win.add(b);
-

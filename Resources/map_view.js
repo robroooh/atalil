@@ -47,7 +47,7 @@ takePhotoButton.addEventListener('click', function() {
 	
 	var shakew = Titanium.UI.createWindow({
 		backgroundColor : "#123",
-		title : 'New Window',
+		title : 'Shake the fuck off',
 		barColor : 'black',
 		url : 'shake.js',
 		longitude : globalLongitude,
