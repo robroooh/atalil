@@ -1,3 +1,7 @@
+var win = Ti.UI.currentWindow;
+
+alert("latitude: " + win.latitude + "longitude: " + win.longitude);
+
 var b = Titanium.UI.createButton({
 	title:'Close',
 	top:400,
@@ -9,8 +13,10 @@ b.addEventListener('click',function(){
 	Ti.UI.currentWindow.close();
 });
 
+
+
 var label = Ti.UI.createLabel({
-	text : "SHAKE IT OFF!",
+	text : win.longitude,
 	width: "auto",
 	height : "auto",
 	color: "#FFF",
@@ -38,11 +44,12 @@ var countLabel  = Ti.UI.createLabel({
 var count = 0;
 
 Ti.Gesture.addEventListener("shake", function(e){
+	Titanium.Media.vibrate();
 	count += 1;
 	countLabel.text = count;
 });
 
-Ti.UI.currentWindow.add(label);
-Ti.UI.currentWindow.add(countLabel);
-Ti.UI.currentWindow.add(b);
+win.add(label);
+win.add(countLabel);
+win.add(b);
 
