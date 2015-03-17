@@ -1,1 +1,1 @@
-function ApplicationWindow(){var t=require("ui/common/FirstView"),o=Ti.UI.createWindow({backgroundColor:"#ffffff"}),e=new t;return o.add(e),o}module.exports=ApplicationWindow;
+function ApplicationWindow(){var t=require("ui/common/FirstView"),e=Ti.UI.createWindow({backgroundColor:"#ffffff"}),i=new t;return e.add(i),e}module.exports=ApplicationWindow;

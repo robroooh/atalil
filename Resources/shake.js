@@ -7,27 +7,16 @@ var b = Titanium.UI.createButton({
 	height : "auto"
 });
 
-var photo;
-
 b.addEventListener('click', function() {
 	var photow = Titanium.UI.createWindow({
 		backgroundColor : "#123",
 		title : 'take a photo',
 		barColor : 'black',
 		url : 'photo.js',
-		photo : ''
+		xparent : win
 	});
 
 	photow.open();
-	var img_view = Titanium.UI.createImageView({
-		backgroundColor : 'pink',
-		height : '100%',
-		width : '100%',
-		image : photo
-	});
-
-	win.add(img_view);
-
 });
 
 var image = Ti.UI.createImageView({
@@ -63,7 +52,7 @@ var countLabel = Ti.UI.createLabel({
 	}
 });
 
-var count = 0;
+var count = 1;
 
 Ti.Gesture.addEventListener("shake", function(e) {
 	Titanium.Media.vibrate();
@@ -75,6 +64,32 @@ Ti.Gesture.addEventListener("shake", function(e) {
 		label.setText("Congratulation!\nYou just save the world!");
 		win.add(b);
 	}
+});
+
+function getImg(result) {
+	alert("getImg called");
+	var img_view = Titanium.UI.createImageView({
+		backgroundColor : 'pink',
+		height : '100%',
+		width : '100%',
+		image : result,
+	});
+
+	win.add(img_view);
+
+}
+
+win.addEventListener('img', function(e) {
+	alert("event img called");
+	var img_view = Titanium.UI.createImageView({
+		backgroundColor : 'pink',
+		height : '100%',
+		width : '100%',
+		image : e.img,
+	});
+
+	win.add(img_view);
+
 });
 
 win.add(label);
