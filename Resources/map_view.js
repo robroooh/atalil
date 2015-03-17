@@ -1,6 +1,6 @@
 var MapModule = require('ti.map');
 var win = Ti.UI.currentWindow;
-
+//ho
 var opera = MapModule.createAnnotation({
 	latitude : -33.8569,
 	longitude : 151.2153,

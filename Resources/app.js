@@ -1,6 +1,7 @@
 var win = Ti.UI.createWindow({
 	backgroundColor : "#000"
 });
+//go
 
 var logo = Ti.UI.createImageView({
 	image : '/images/pornhub-logo.jpg',
