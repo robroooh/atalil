@@ -9,11 +9,13 @@ var win = Ti.UI.currentWindow;
 // subtitle : 'Sydney, New South Wales, Australia'
 // });
 
+alert(win.jData);
+
 var annot = [];
 
 for (var i = 0; i < win.jData.co.length; i++) {
 
-	annot[i] = MapModule.createAnnotation({
+	annot[i] = MapModule.createAnnotaion({
 		latitude : win.jData.co[i].latitude,
 		longitude : win.jData.co[i].longitude,
 		title : win.jData.co[i].title
@@ -37,8 +39,8 @@ var mapview = MapModule.createView({
 var takePhotoButton = Ti.UI.createButton({
 	title : 'takePhotoButton',
 	height : 50,
-	width : 250,
-	bottom : 10
+	width : 300,
+	bottom : 0
 });
 
 var globalLongitude,
@@ -65,24 +67,13 @@ takePhotoButton.addEventListener('click', function() {
 		barColor : 'black',
 		url : 'shake.js',
 		longitude : globalLongitude,
-		latitude : globalLatitude,
-		xparent : win
+		latitude : globalLatitude
 	});
 
 	shakew.open();
 });
-
 win.addEventListener('reload', function(e) {
-	var justTake = MapModule.createAnnotation({
-		latitude : e.data.latitude,
-		longitude : e.data.longitude,
-		image : e.data.imgpath,
-		title : 'JustTake',
-		subtitle : 'HoooRay'
-	});
-	
-	mapview.addAnnotation(justTake);
-	
+
 });
 
 // Add to the parent view.

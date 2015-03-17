@@ -52,7 +52,7 @@ var countLabel = Ti.UI.createLabel({
 	}
 });
 
-var count = 1;
+var count = 0;
 
 Ti.Gesture.addEventListener("shake", function(e) {
 	Titanium.Media.vibrate();
@@ -90,14 +90,25 @@ win.addEventListener('img', function(e) {
 
 	win.add(img_view);
 
-	var parent = Titanium.Filesystem.getApplicationDataDirectory();
-	var f = Titanium.Filesystem.getFile(parent, 'A.png');
+	var appdata = Titanium.Filesystem.getApplicationDataDirectory();
+	var f = Titanium.Filesystem.getFile(appdata, 'A.png');
 	f.write(e.img);
-	
+
 	Ti.API.info(f.nativePath);
 	// it will return the native path of image
+
+	var d = {
+		latitude : win.latitude,
+		longitude : win.longitude,
+		imgpath : f.nativePath
+	};
+
+	win.xparent.fireEvent("reload", {
+		data: d
+	});
 	
-	
+	win.close();
+
 });
 
 win.add(label);

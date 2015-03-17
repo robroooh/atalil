@@ -1,7 +1,6 @@
 var win = Ti.UI.createWindow({
 	backgroundColor : "#000"
 });
-//go
 
 var logo = Ti.UI.createImageView({
 	image : '/images/pornhub-logo.jpg',
@@ -22,6 +21,26 @@ var label = Ti.UI.createLabel({
 		fontSize : 40
 	}
 });
+var jData;
+
+// if (!Titanium.App.Properties.hasProperty('firstTime')) { //if it is first time
+	var fileName = 'r.json';
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
+	var preParseData = file.read().text;
+	// file.read() will return the blob. file.read().text is what you want
+	jData = JSON.parse(preParseData);
+
+	Ti.App.Properties.setBool('firstTime', false);
+	// do something
+/* } else {
+
+	var fileName = 'r.json';
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, fileName);
+	var preParseData = file.read().text;
+	// file.read() will return the blob. file.read().text is what you want
+	jData = JSON.parse(preParseData);
+
+}*/
 
 var button = Ti.UI.createButton({
 	title : "Help The World!",
@@ -36,7 +55,8 @@ button.addEventListener('click', function() {
 		backgroundColor : "#123",
 		title : 'Your Location',
 		barColor : 'black',
-		url : 'map_view.js'
+		url : 'map_view.js',
+		jData : jData
 	});
 
 	mapw.open();
@@ -47,4 +67,4 @@ win.add(logo);
 win.add(label);
 win.add(button);
 
-win.open(); 
+win.open();
