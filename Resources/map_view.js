@@ -38,7 +38,6 @@ var takePhotoButton = Ti.UI.createButton({
 	title : 'takePhotoButton',
 	height : 50,
 	width : 250,
-
 	bottom : 10,
 	borderRadius : 1,
 	font : {
@@ -48,13 +47,12 @@ var takePhotoButton = Ti.UI.createButton({
 	},
 	color : '#ecf0f1',
 	backgroundColor : '#e74c3c',
-	bottom : 10
-
 });
 
 var globalLongitude,
     globalLatitude;
-
+	
+// Listen for click events.
 takePhotoButton.addEventListener('click', function() {
 
 	Titanium.Geolocation.getCurrentPosition(function(e) {
@@ -65,8 +63,6 @@ takePhotoButton.addEventListener('click', function() {
 		}
 		globalLongitude = e.coords.longitude;
 		globalLatitude = e.coords.latitude;
-
-		//////////////////// ALERT //////////////////
 
 		alert("latitude: " + globalLatitude + "longitude: " + globalLongitude);
 
