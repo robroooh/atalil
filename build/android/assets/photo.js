@@ -1,1 +1,0 @@
-var win=Ti.UI.currentWindow;Titanium.Media.showCamera({success:function(t){var e=Titanium.UI.createImageView({backgroundColor:"pink",height:"100%",width:"100%"});e.setImage(t.media),win.xparent.fireEvent("img",{img:t.media}),win.add(e),win.close()},cancel:function(){},error:function(){win.close()}});
