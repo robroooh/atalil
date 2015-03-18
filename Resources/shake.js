@@ -1,23 +1,5 @@
 var win = Ti.UI.currentWindow;
-// 
-// var b = Titanium.UI.createButton({
-	// title : 'Take a Photo',
-	// bottom : 20,
-	// width : "300",
-	// height : "auto"
-// });
-// 
-// b.addEventListener('click', function() {
-	// var photow = Titanium.UI.createWindow({
-		// backgroundColor : "#123",
-		// title : 'take a photo',
-		// barColor : 'black',
-		// url : 'photo.js',
-		// xparent : win
-	// });
-// 
-	// photow.open();
-// });
+
 
 var image = Ti.UI.createImageView({
 
@@ -130,7 +112,8 @@ win.addEventListener('img', function(e) {
 	var d = {
 		latitude : win.latitude,
 		longitude : win.longitude,
-		imgpath : f.nativePath
+		imgpath : f.nativePath,
+		title: Math.round(+new Date()/1000)
 	};
 
 	win.xparent.fireEvent("reload", {

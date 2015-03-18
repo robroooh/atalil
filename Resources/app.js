@@ -23,7 +23,8 @@ var label = Ti.UI.createLabel({
 });
 var jData;
 
-// if (!Titanium.App.Properties.hasProperty('firstTime')) { //if it is first time
+if (!Titanium.App.Properties.hasProperty('firstTime')) {//if it is first time
+	alert("First Time");
 	var fileName = 'r.json';
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
 	var preParseData = file.read().text;
@@ -32,15 +33,16 @@ var jData;
 
 	Ti.App.Properties.setBool('firstTime', false);
 	// do something
-/* } else {
-
+} else {
+	alert("No First");
 	var fileName = 'r.json';
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, fileName);
+	alert(file);
 	var preParseData = file.read().text;
 	// file.read() will return the blob. file.read().text is what you want
 	jData = JSON.parse(preParseData);
-
-}*/
+	alert(JSON.stringify(jData));
+}
 
 var button = Ti.UI.createButton({
 	title : "Get Started",
@@ -56,7 +58,6 @@ var button = Ti.UI.createButton({
 	color : '#ecf0f1',
 	backgroundColor : '#34495e'
 });
-
 
 button.addEventListener('click', function() {
 
