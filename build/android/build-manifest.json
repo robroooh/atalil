@@ -19,7 +19,7 @@
 	"guid": "817b7f17-19b7-49a4-8519-8c3b809b061a",
 	"icon": "appicon.png",
 	"fullscreen": false,
-	"skipJSMinification": true,
+	"skipJSMinification": false,
 	"mergeCustomAndroidManifest": false,
 	"encryptJS": true,
 	"minSDK": 10,
