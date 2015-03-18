@@ -41,6 +41,7 @@ var takePhotoButton = Ti.UI.createButton({
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+
 	bottom : 10,
 	borderRadius : 1,
 	font : {
@@ -57,8 +58,10 @@ var takePhotoButton = Ti.UI.createButton({
 	bottom : 10
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
+	backgroundColor : '#e74c3c',
 	bottom : 10
 >>>>>>> parent of 1d28fc2... make the app more beautiful
+
 });
 
 var globalLongitude,
@@ -74,6 +77,7 @@ var globalLongitude,
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
 >>>>>>> parent of 1d28fc2... make the app more beautiful
+
 takePhotoButton.addEventListener('click', function() {
 
 	Titanium.Geolocation.getCurrentPosition(function(e) {

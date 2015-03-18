@@ -22,6 +22,7 @@ b.addEventListener('click', function() {
 var image = Ti.UI.createImageView({
 <<<<<<< HEAD
 <<<<<<< HEAD
+
 	image : '/images/shuck.png',
 	bottom : 40,
 	width : 300,
@@ -37,6 +38,7 @@ var image = Ti.UI.createImageView({
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
 >>>>>>> parent of 1d28fc2... make the app more beautiful
+
 });
 
 var label = Ti.UI.createLabel({
@@ -75,6 +77,7 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	if (count >= 1) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+
 		var alertView = Ti.UI.createView({
 			width : 250,
 			height : 150,
@@ -154,6 +157,7 @@ Ti.Gesture.addEventListener("shake", function(e) {
 =======
 		alert("3 NOW");
 >>>>>>> parent of 1d28fc2... make the app more beautiful
+
 		label.setText("Congratulation!\nYou just save the world!");
 		win.add(b);
 	}
