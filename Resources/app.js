@@ -43,11 +43,20 @@ var jData;
 }*/
 
 var button = Ti.UI.createButton({
-	title : "Help The World!",
+	title : "Get Started",
 	height : 'auto',
 	width : 200,
-	top : 450
+	top : 450,
+	borderRadius : 1,
+	font : {
+		fontSize : 22,
+		fontWeight : 'bold',
+		fontFamily : 'Segoe UI Semibold'
+	},
+	color : '#ecf0f1',
+	backgroundColor : '#34495e'
 });
+
 
 button.addEventListener('click', function() {
 
@@ -62,7 +71,6 @@ button.addEventListener('click', function() {
 	mapw.open();
 });
 
-//TAE WAS HERE
 win.add(logo);
 win.add(label);
 win.add(button);

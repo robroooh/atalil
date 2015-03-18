@@ -35,7 +35,7 @@ var mapview = MapModule.createView({
 
 // Create a Button.
 var takePhotoButton = Ti.UI.createButton({
-	title : 'takePhotoButton',
+	title : 'Do the Landmark',
 	height : 50,
 	width : 250,
 	bottom : 10,
@@ -70,7 +70,7 @@ takePhotoButton.addEventListener('click', function() {
 
 	var shakew = Titanium.UI.createWindow({
 		backgroundColor : "rgb(36,38,37)",
-		title : 'Shake the fuck off',
+		title : 'Shake it off',
 		barColor : 'black',
 		url : 'shake.js',
 		longitude : globalLongitude,
