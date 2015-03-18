@@ -24,29 +24,37 @@ var label = Ti.UI.createLabel({
 var jData;
 
 // if (!Titanium.App.Properties.hasProperty('firstTime')) { //if it is first time
-	var fileName = 'r.json';
-	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
-	var preParseData = file.read().text;
-	// file.read() will return the blob. file.read().text is what you want
-	jData = JSON.parse(preParseData);
+var fileName = 'r.json';
+var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
+var preParseData = file.read().text;
+// file.read() will return the blob. file.read().text is what you want
+jData = JSON.parse(preParseData);
 
-	Ti.App.Properties.setBool('firstTime', false);
-	// do something
+Ti.App.Properties.setBool('firstTime', false);
+// do something
 /* } else {
 
-	var fileName = 'r.json';
-	var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, fileName);
-	var preParseData = file.read().text;
-	// file.read() will return the blob. file.read().text is what you want
-	jData = JSON.parse(preParseData);
+ var fileName = 'r.json';
+ var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, fileName);
+ var preParseData = file.read().text;
+ // file.read() will return the blob. file.read().text is what you want
+ jData = JSON.parse(preParseData);
 
-}*/
+ }*/
 
 var button = Ti.UI.createButton({
 	title : "Help The World!",
 	height : 'auto',
 	width : 200,
-	top : 450
+	top : 450,
+	borderRadius : 1,
+	font : {
+		fontSize : 18,
+		fontWeight : 'bold',
+		fontFamily : 'Segoe UI Semibold'
+	},
+	color : '#ecf0f1',
+	backgroundColor : '#34495e'
 });
 
 button.addEventListener('click', function() {

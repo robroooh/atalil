@@ -1,42 +1,23 @@
 var win = Ti.UI.currentWindow;
 
-var b = Titanium.UI.createButton({
-	title : 'Take a Photo',
-	bottom : 20,
-	width : "300",
-	height : "auto"
-});
-
-b.addEventListener('click', function() {
-	var photow = Titanium.UI.createWindow({
-		backgroundColor : "#123",
-		title : 'take a photo',
-		barColor : 'black',
-		url : 'photo.js',
-		xparent : win
-	});
-
-	photow.open();
-});
-
 var image = Ti.UI.createImageView({
-	image : 'fap.jpg',
-	bottom : "100",
-	width : 'auto',
-	height : 'auto'
+	image : '/images/shake-phone.jpg',
+	bottom : 40,
+	width : 300,
+	height : 300
 });
 
 var label = Ti.UI.createLabel({
-	text : "ชักว่าวสิ",
+	text : "Shake IT !!!!",
 	width : "auto",
 	height : "auto",
-	color : "#FFF",
 	top : 150,
 	font : {
-		fontFamily : 'Arial',
+		fontSize : 20,
 		fontWeight : 'bold',
-		fontSize : 24
-	}
+		fontFamily : 'Segoe UI Semibold'
+	},
+	color : '#ecf0f1',
 });
 
 var countLabel = Ti.UI.createLabel({
@@ -60,9 +41,83 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	countLabel.text = count;
 
 	if (count >= 1) {
-		alert("3 NOW");
+		var alertView = Ti.UI.createView({
+			width : 200,
+			height : 200,
+			borderColor : '#9b59b6',
+			borderWidth : 2,
+			backgroundColor : "black",
+		});
+
+		var titleLabel = Ti.UI.createLabel({
+			top : 10,
+			height : 40,
+			left : 10,
+			color : "white",
+			textAlign : 'center',
+			font : {
+				fontSize : 14,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			text : "You Done already!!!"
+		});
+
+		alertView.add(titleLabel);
+
+		var ok = Ti.UI.createButton({
+			width : 85,
+			height : 42,
+			bottom : 10,
+			left : 10,
+			title : 'I can do more',
+			font : {
+				fontSize : 14,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			color : '#ecf0f1',
+			backgroundColor : '#3498db'
+
+		});
+
+		ok.addEventListener('click', function(e) {
+			alertView.hide();
+		});
+
+		var b = Titanium.UI.createButton({
+			title : 'give up',
+			width : 85,
+			height : 42,
+			bottom : 10,
+			right : 10,
+			borderRadius : 1,
+			font : {
+				fontSize : 14,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			color : '#ecf0f1',
+			backgroundColor : '#9b59b6'
+		});
+
+		b.addEventListener('click', function() {
+			var photow = Titanium.UI.createWindow({
+				backgroundColor : "#123",
+				title : 'take a photo',
+				barColor : 'black',
+				url : 'photo.js',
+				xparent : win
+			});
+
+			photow.open();
+		});
+
+		alertView.add(ok);
+		alertView.add(b);
 		label.setText("Congratulation!\nYou just save the world!");
-		win.add(b);
+
+		win.add(alertView);
 	}
 });
 
@@ -104,9 +159,9 @@ win.addEventListener('img', function(e) {
 	};
 
 	win.xparent.fireEvent("reload", {
-		data: d
+		data : d
 	});
-	
+
 	win.close();
 
 });
