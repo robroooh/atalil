@@ -35,9 +35,10 @@ var mapview = MapModule.createView({
 
 // Create a Button.
 var takePhotoButton = Ti.UI.createButton({
-	title : 'Do the Landmark',
+	title : 'takePhotoButton',
 	height : 50,
 	width : 250,
+<<<<<<< HEAD
 	bottom : 10,
 	borderRadius : 1,
 	font : {
@@ -47,12 +48,18 @@ var takePhotoButton = Ti.UI.createButton({
 	},
 	color : '#ecf0f1',
 	backgroundColor : '#e74c3c'
+=======
+	bottom : 10
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 });
 
 var globalLongitude,
     globalLatitude;
 // Listen for click events.
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 takePhotoButton.addEventListener('click', function() {
 
 	Titanium.Geolocation.getCurrentPosition(function(e) {
@@ -63,8 +70,11 @@ takePhotoButton.addEventListener('click', function() {
 		}
 		globalLongitude = e.coords.longitude;
 		globalLatitude = e.coords.latitude;
+<<<<<<< HEAD
 
 		//////////////////// ALERT //////////////////
+=======
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 
 		alert("latitude: " + globalLatitude + "longitude: " + globalLongitude);
 
@@ -99,5 +109,4 @@ win.addEventListener('reload', function(e) {
 // Add to the parent view.
 win.add(mapview);
 win.add(takePhotoButton);
-
 win.open();

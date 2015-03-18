@@ -1,23 +1,49 @@
 var win = Ti.UI.currentWindow;
 
+var b = Titanium.UI.createButton({
+	title : 'Take a Photo',
+	bottom : 20,
+	width : "300",
+	height : "auto"
+});
+
+b.addEventListener('click', function() {
+	var photow = Titanium.UI.createWindow({
+		backgroundColor : "#123",
+		title : 'take a photo',
+		barColor : 'black',
+		url : 'photo.js',
+		xparent : win
+	});
+
+	photow.open();
+});
+
 var image = Ti.UI.createImageView({
+<<<<<<< HEAD
 	image : '/images/shuck.png',
 	bottom : 40,
 	width : 300,
 	height : 300
+=======
+	image : 'fap.jpg',
+	bottom : "100",
+	width : 'auto',
+	height : 'auto'
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 });
 
 var label = Ti.UI.createLabel({
-	text : "Shake IT !!!!",
+	text : "ชักว่าวสิ",
 	width : "auto",
 	height : "auto",
+	color : "#FFF",
 	top : 150,
 	font : {
-		fontSize : 20,
+		fontFamily : 'Arial',
 		fontWeight : 'bold',
-		fontFamily : 'Segoe UI Semibold'
-	},
-	color : '#ecf0f1',
+		fontSize : 24
+	}
 });
 
 var countLabel = Ti.UI.createLabel({
@@ -41,6 +67,7 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	countLabel.text = count;
 
 	if (count >= 1) {
+<<<<<<< HEAD
 		var alertView = Ti.UI.createView({
 			width : 250,
 			height : 150,
@@ -114,9 +141,11 @@ Ti.Gesture.addEventListener("shake", function(e) {
 
 		alertView.add(ok);
 		alertView.add(b);
+=======
+		alert("3 NOW");
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 		label.setText("Congratulation!\nYou just save the world!");
-
-		win.add(alertView);
+		win.add(b);
 	}
 });
 
@@ -158,9 +187,9 @@ win.addEventListener('img', function(e) {
 	};
 
 	win.xparent.fireEvent("reload", {
-		data : d
+		data: d
 	});
-
+	
 	win.close();
 
 });
