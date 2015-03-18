@@ -13,6 +13,7 @@ Titanium.Media.showCamera({
 		win.xparent.fireEvent("img", {
 			img : event.media
 		});
+		
 		win.add(img_view);
 		win.close();
 	},
