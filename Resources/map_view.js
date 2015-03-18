@@ -39,6 +39,7 @@ var takePhotoButton = Ti.UI.createButton({
 	height : 50,
 	width : 250,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	bottom : 10,
 	borderRadius : 1,
 	font : {
@@ -51,13 +52,19 @@ var takePhotoButton = Ti.UI.createButton({
 =======
 	bottom : 10
 >>>>>>> parent of 1d28fc2... make the app more beautiful
+=======
+	bottom : 10
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 });
 
 var globalLongitude,
     globalLatitude;
 // Listen for click events.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 takePhotoButton.addEventListener('click', function() {
@@ -71,8 +78,11 @@ takePhotoButton.addEventListener('click', function() {
 		globalLongitude = e.coords.longitude;
 		globalLatitude = e.coords.latitude;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		//////////////////// ALERT //////////////////
+=======
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 

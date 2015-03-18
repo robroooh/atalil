@@ -21,15 +21,21 @@ b.addEventListener('click', function() {
 
 var image = Ti.UI.createImageView({
 <<<<<<< HEAD
+<<<<<<< HEAD
 	image : '/images/shuck.png',
 	bottom : 40,
 	width : 300,
 	height : 300
 =======
+=======
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 	image : 'fap.jpg',
 	bottom : "100",
 	width : 'auto',
 	height : 'auto'
+<<<<<<< HEAD
+>>>>>>> parent of 1d28fc2... make the app more beautiful
+=======
 >>>>>>> parent of 1d28fc2... make the app more beautiful
 });
 
@@ -67,6 +73,7 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	countLabel.text = count;
 
 	if (count >= 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		var alertView = Ti.UI.createView({
 			width : 250,
@@ -141,6 +148,9 @@ Ti.Gesture.addEventListener("shake", function(e) {
 
 		alertView.add(ok);
 		alertView.add(b);
+=======
+		alert("3 NOW");
+>>>>>>> parent of 1d28fc2... make the app more beautiful
 =======
 		alert("3 NOW");
 >>>>>>> parent of 1d28fc2... make the app more beautiful
