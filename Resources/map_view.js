@@ -39,19 +39,19 @@ var takePhotoButton = Ti.UI.createButton({
 	height : 50,
 	width : 250,
 	bottom : 10,
-	borderRadius:1,
-	font:{fontSize:22,fontWeight:'bold',fontFamily:'Segoe UI Semibold'},
-	color:'#ecf0f1',
-	backgroundColor: '#e74c3c'
+	borderRadius : 1,
+	font : {
+		fontSize : 22,
+		fontWeight : 'bold',
+		fontFamily : 'Segoe UI Semibold'
+	},
+	color : '#ecf0f1',
+	backgroundColor : '#e74c3c'
 });
 
 var globalLongitude,
     globalLatitude;
 // Listen for click events.
-
-
-
-
 
 takePhotoButton.addEventListener('click', function() {
 
@@ -63,25 +63,15 @@ takePhotoButton.addEventListener('click', function() {
 		}
 		globalLongitude = e.coords.longitude;
 		globalLatitude = e.coords.latitude;
-		
-		//////////////////// ALERT //////////////////
-		
 
-		
-		
-		
-		
-		
-		
-		
-		
+		//////////////////// ALERT //////////////////
 
 		alert("latitude: " + globalLatitude + "longitude: " + globalLongitude);
 
 	});
 
 	var shakew = Titanium.UI.createWindow({
-		backgroundColor : "#123",
+		backgroundColor : "rgb(36,38,37)",
 		title : 'Shake the fuck off',
 		barColor : 'black',
 		url : 'shake.js',
@@ -101,9 +91,9 @@ win.addEventListener('reload', function(e) {
 		title : 'JustTake',
 		subtitle : 'HoooRay'
 	});
-	
+
 	mapview.addAnnotation(justTake);
-	
+
 });
 
 // Add to the parent view.

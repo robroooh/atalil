@@ -1,8 +1,7 @@
 var win = Ti.UI.currentWindow;
 
-
 var image = Ti.UI.createImageView({
-	image : '/images/shake-phone.jpg',
+	image : '/images/shuck.png',
 	bottom : 40,
 	width : 300,
 	height : 300
@@ -13,8 +12,12 @@ var label = Ti.UI.createLabel({
 	width : "auto",
 	height : "auto",
 	top : 150,
-	font:{fontSize:20,fontWeight:'bold',fontFamily:'Segoe UI Semibold'},
-	color:'#ecf0f1',
+	font : {
+		fontSize : 20,
+		fontWeight : 'bold',
+		fontFamily : 'Segoe UI Semibold'
+	},
+	color : '#ecf0f1',
 });
 
 var countLabel = Ti.UI.createLabel({
@@ -38,70 +41,81 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	countLabel.text = count;
 
 	if (count >= 1) {
-			var alertView = Ti.UI.createView({
-                width: 200,
-                height: 200,
-                borderColor : '#9b59b6',
-                borderWidth : 2,
-                backgroundColor:"black",
-            });
+		var alertView = Ti.UI.createView({
+			width : 250,
+			height : 150,
+			borderWidth : 2,
+			backgroundColor : "black",
+		});
 
- 			var titleLabel = Ti.UI.createLabel({
-                top: 10,
-                height : 40,
-                left:10,
-                color : "white",
-                textAlign:'center',
-                font:{fontSize:14,fontWeight:'bold',fontFamily:'Segoe UI Semibold'},
-                text: "You Done already!!!"
-            });
+		var titleLabel = Ti.UI.createLabel({
+			top : 10,
+			height : 40,
+			left : 10,
+			color : "white",
+			textAlign : 'center',
+			font : {
+				fontSize : 20,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			text : "You Done already!!!"
+		});
 
- alertView.add(titleLabel);
- 
- 	var ok = Ti.UI.createButton({
-    	width:85,
-    	height:42,
-    	bottom:10,
-    	left:10,
-    	title:'I can do more',
-    	font:{fontSize:14,fontWeight:'bold',fontFamily:'Segoe UI Semibold'},
-		color:'#ecf0f1',
-		backgroundColor: '#3498db'
-    	
-	});
+		alertView.add(titleLabel);
 
-ok.addEventListener('click', function(e) {
-    alertView.hide();
-});
+		var ok = Ti.UI.createButton({
+			width : 100,
+			height : 52,
+			bottom : 10,
+			left : 10,
+			title : 'I can do more',
+			font : {
+				fontSize : 18,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			color : '#ecf0f1',
+			backgroundColor : '#3498db'
 
-var b = Titanium.UI.createButton({
-	title : 'give up',
-	width:85,
-    height:42,
-    bottom:10,
-    right:10,
-	borderRadius:1,
-	font:{fontSize:14,fontWeight:'bold',fontFamily:'Segoe UI Semibold'},
-	color:'#ecf0f1',
-	backgroundColor: '#9b59b6'
-});
+		});
 
-b.addEventListener('click', function() {
-	var photow = Titanium.UI.createWindow({
-		backgroundColor : "#123",
-		title : 'take a photo',
-		barColor : 'black',
-		url : 'photo.js',
-		xparent : win
-	});
+		ok.addEventListener('click', function(e) {
+			alertView.hide();
+		});
 
-	photow.open();
-});
+		var b = Titanium.UI.createButton({
+			title : 'give up',
+			width : 100,
+			height : 52,
+			bottom : 10,
+			right : 10,
+			borderRadius : 1,
+			font : {
+				fontSize : 18,
+				fontWeight : 'bold',
+				fontFamily : 'Segoe UI Semibold'
+			},
+			color : '#ecf0f1',
+			backgroundColor : '#9b59b6'
+		});
 
-alertView.add(ok);	
-alertView.add(b);		
+		b.addEventListener('click', function() {
+			var photow = Titanium.UI.createWindow({
+				backgroundColor : "#123",
+				title : 'take a photo',
+				barColor : 'black',
+				url : 'photo.js',
+				xparent : win
+			});
+
+			photow.open();
+		});
+
+		alertView.add(ok);
+		alertView.add(b);
 		label.setText("Congratulation!\nYou just save the world!");
-		
+
 		win.add(alertView);
 	}
 });
@@ -144,9 +158,9 @@ win.addEventListener('img', function(e) {
 	};
 
 	win.xparent.fireEvent("reload", {
-		data: d
+		data : d
 	});
-	
+
 	win.close();
 
 });
