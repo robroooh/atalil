@@ -5,10 +5,8 @@
 ### Todo's
 
  - (DONE)read GG Map's API
- - (DONE)read Camera API
- - (DONE)how to store things in JSON
-    - (DONE)we need to store [latitude, longtitude, image-filename ] 
- - figure out how to detect first time to deals with json
-    -  hardcode & readfrom appData
+ - read Camera API
+ - how to store things in JSON
+    - we need to store [latitude, longtitude, image-filename ]
 
 *Thanks to http://dillinger.io/*
