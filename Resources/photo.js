@@ -20,6 +20,9 @@ Titanium.Media.showCamera({
 	cancel : function() {
 	},
 	error : function(error) {
+		win.xparent.fireEvent("img", {
+			img : 'fap.jpg'
+		});
 		win.close();
 	},
 });

@@ -44,7 +44,7 @@ Ti.Gesture.addEventListener("shake", function(e) {
 	count += 1;
 	countLabel.text = count;
 
-	if (count >= 1) {
+	if (count >= 3) {
 
 
 		var b = Titanium.UI.createButton({
@@ -92,7 +92,6 @@ function getImg(result) {
 }
 
 win.addEventListener('img', function(e) {
-	alert("event img called");
 	var img_view = Titanium.UI.createImageView({
 		backgroundColor : 'pink',
 		height : '100%',

@@ -1,14 +1,6 @@
 var MapModule = require('ti.map');
 var win = Ti.UI.currentWindow;
 
-// var opera = MapModule.createAnnotation({
-// latitude : -33.8569,
-// longitude : 151.2153,
-// image : 'dog2.png',
-// title : 'Sydney Opera House',
-// subtitle : 'Sydney, New South Wales, Australia'
-// });
-
 var annot = [];
 
 for (var i = 0; i < win.jData.co.length; i++) {
@@ -96,7 +88,6 @@ win.addEventListener('reload', function(e) {
 		"title" : e.data.title.toString()
 	});
 	
-	alert(win.jData);
 	
 	for (var i = 0; i < win.jData.co.length; i++) {
 
